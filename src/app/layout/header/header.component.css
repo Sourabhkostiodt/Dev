@@ -22,7 +22,7 @@
 
 }
 .cus_login{
-  padding: 0px;
+  padding: 0px 0px 2px 0px;
   color:#fff;
 }
 .img-logo{
@@ -42,7 +42,7 @@ padding-right:10px ;
   font-size: 14px;
   font-weight: 700;
 }
-i.bi-person-badge.me-2 {
+i.bi-person.me-2 {
   margin-right: 3px;
 }
 button.btn.btn-primary.rounded-pill.px-3.mb-2.mb-lg-0 {
