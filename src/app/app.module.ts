@@ -7,6 +7,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AuthModule } from './auth/auth.module';
+import { AboutComponent } from './pages/about/about.component';
+import { PricesComponent } from './pages/prices/prices.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 
@@ -16,6 +19,9 @@ import { AuthModule } from './auth/auth.module';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    AboutComponent,
+    PricesComponent,
+    ContactComponent,
 
 
   ],
