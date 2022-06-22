@@ -4,23 +4,40 @@
 <form>
   <div class="main_form">
     <h2>  Contact Us </h2>
-  <div class="form-group">
+
+    <div class="form-group cus_contact">
+      <label for="exampleInputPassword1">Name</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Name">
+      <small id="emailHelp" class="form-text text-muted">Use only first name</small>
+    </div>
+
+  <div class="form-group cus_contact">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <small id="emailHelp" class="form-text text-muted">please provide valid one !</small>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    <small id="emailHelp" class="form-text text-muted">Use Special Symbol and make it stronger.</small>
+
+  <div class="form-group cus_contact">
+    <label for="exampleInputPassword1">Message</label>
+    <textarea class="form-control" id="exampleInputPassword1" placeholder="message"></textarea>
+    <small id="emailHelp" class="form-text text-muted">Use 100+ charcter</small>
   </div>
 
   <div class="btn_cls">
 
-  <a  class="btn btn-primary" routerLink="/login"> Sent </a>
-  <div class="register_link"><small id="emailHelp" class="form-text text-muted">Don't have a account please<a  class="" routerLink="/register"> Register</a></small></div>
+  <a  class="btn btn-primary" routerLink="/login"> Connect </a>
+  <!-- <div class="register_link"><small id="emailHelp" class="form-text text-muted">Don't have a account please<a  class="" routerLink="/register"> Register</a></small></div> -->
 </div>
 </div>
-
-
 </form>
+
+<aside class="text-center bg-gradient-primary-to-secondary">
+  <div class="container px-5">
+      <div class="row gx-5 justify-content-center">
+          <div class="col-xl-12">
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+          </div>
+      </div>
+  </div>
+</aside>

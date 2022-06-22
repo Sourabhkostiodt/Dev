@@ -1,35 +1,27 @@
-form{
-  padding: 8% 35% 3% 35%;
 
+
+.display-1 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.2;
 }
-.socila_text{
+.masthead{
+  background-color: #e2e2e2;
+  padding-top: 9.5rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px;
+}
+.container{
+  margin-top:70px;
+}
+a.login_cus_btn {
+  text-align: center;
+  margin: 0 auto;
+  background: #003c50;
+  padding: 10px 12px;
+  color: #fff;
+  font-size: 12px;
   font-weight: 600;
-  color: #000 !important;
+  border-radius: 20px;
   text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.social {
-  text-align: center;
-  padding-top: 20px;
-}
-.main_form {
-  border: 1px solid #ffffff;
-  padding: 45px 30px;
-  background: #ffffff;
-  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
-
-}
-a.btn.btn-primary:nth-child(2) {
-  margin-left: 20px;
-}
-.main_form h2 {
-  color: #000;
-  text-transform: uppercase;
-  text-align: center;
-  padding-bottom: 40px;
-  font-size: 28px;
-}
-
-.form-group{
-  margin-bottom: 40px;
 }

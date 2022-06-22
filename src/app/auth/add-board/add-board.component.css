@@ -1,0 +1,13 @@
+.container.dashboard_cont {
+
+  padding: 3px 17px;
+  background: #474444;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+.d-grid {
+  background: #a1a1a1;
+  padding: 80px;
+  border: 1px dashed  #fff;
+  text-align: center;
+}

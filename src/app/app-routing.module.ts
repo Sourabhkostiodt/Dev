@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddBoardComponent } from './auth/add-board/add-board.component';
+import { DashboardComponent } from './auth/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -17,8 +19,10 @@ const routes: Routes = [];
     { path: 'about', component: AboutComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component:RegisterComponent },
-    { path: 'reset-password', component:RegisterComponent },
-     { path: '**', redirectTo: '/home' }
+    { path: 'register', component:RegisterComponent },
+    { path: 'dashboard', component:DashboardComponent },
+    { path: 'add-board', component:AddBoardComponent },
+    { path: '**', redirectTo: '/home' }
 
   ])],
   exports: [RouterModule]
