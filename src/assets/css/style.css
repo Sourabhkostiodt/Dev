@@ -8223,7 +8223,9 @@ h1, h2, h3, h4, h5,
   #sidebar.active {
     min-width: 80px;
     max-width: 80px;
-    text-align: center; }
+    text-align: center;
+    box-shadow: 2px 0px 1px 1px rgb(0 0 0 / 30%);
+    margin-right: 10px; }
     #sidebar.active ul.components li {
       font-size: 14px; }
       #sidebar.active ul.components li a {
@@ -8317,7 +8319,9 @@ a[data-toggle="collapse"] {
   min-height: 100vh;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
-  transition: all 0.3s; }
+  box-shadow: 2px 0px 1px 1px rgb(0 0 0 / 30%);
+  transition: all 0.3s;
+  background: #c4c4c4; }
 
 .btn.btn-primary {
   background: #3e64ff;

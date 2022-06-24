@@ -1,0 +1,39 @@
+.container.dashboard_cont {
+  margin-top: 70px;
+}
+.custom_top{
+margin-top: 55px;
+}
+.cus_data_source li{
+  list-style: none;
+  margin-bottom: 10px;
+}
+.cus_data_source li img{
+  width:250px;
+  height:auto;
+  border-radius: 4%;
+}
+
+div.click-to-top span {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #333;
+  color: #fff;
+}
+
+div.click-to-top:hover span {
+  display: block;
+}
+
+.upload.class {
+  text-align: center;
+  border: 1px solid #878787;
+  width: 150px;
+  margin: 0 auto;
+  height: 125px;
+  border-radius: 20px;
+  background: #dadada;
+}

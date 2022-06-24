@@ -4,6 +4,7 @@ import { AddBoardComponent } from './auth/add-board/add-board.component';
 import { DashboardComponent } from './auth/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { SourceComponent } from './auth/source/source.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -22,6 +23,7 @@ const routes: Routes = [];
     { path: 'register', component:RegisterComponent },
     { path: 'dashboard', component:DashboardComponent },
     { path: 'add-board', component:AddBoardComponent },
+    { path: 'source', component:SourceComponent },
     { path: '**', redirectTo: '/home' }
 
   ])],
