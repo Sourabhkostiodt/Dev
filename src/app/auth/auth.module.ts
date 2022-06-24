@@ -9,6 +9,7 @@ import { AddBoardComponent } from './add-board/add-board.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AngularDraggableModule } from 'ngx-draggable-resize';
 import { SourceComponent } from './source/source.component';
+ import { ResizableDraggableComponent } from './resizable-draggable/resizable-draggable.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SourceComponent } from './source/source.component';
     ResetPasswordComponent,
     DashboardComponent,
     AddBoardComponent,
-    SourceComponent
+    SourceComponent,
+    ResizableDraggableComponent
   ],
   imports: [
     CommonModule,
