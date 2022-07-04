@@ -1,31 +1,38 @@
 <div class="wrapper d-flex align-items-stretch custom_top">
   <nav id="sidebar " class="active add_sidebar">
-    <h1></h1>
+    <h1>Visulization</h1>
     <ul class="list-unstyled components mb-5">
       <div class="row cus_vituacal">
       <li class="active col-sm">
-        <a href="#"><span class="fa fa-home"></span> Number</a>
+        <button href="#" (click)="number()"><img src="./assets/img/numbers.png" width="50px" height="50px"/> Number</button>
       </li>
       <li class="col-sm">
-          <a href="#"><span class="fa fa-user"></span> Line</a>
+          <a href="#" (click)="line()"><img src="./assets/img/greport.png" width="50px" height="50px"/> Line</a>
       </li>
       <li class="col-sm">
-        <a href="#"><span class="fa fa-sticky-note"></span> Bar</a>
+        <a href="#" (click)="bar()"><img src="./assets/img/bar.png" width="50px" height="50px"/> Bar</a>
       </li>
       <li class="col-sm">
-        <a href="#"><span class="fa fa-cogs"></span> Pai</a>
+        <a href="#" (click)="pie()"><img src="./assets/img/pie.png" width="50px" height="50px"/> Pie</a>
       </li>
       <li class="col-sm">
-        <a href="#"><span class="fa fa-paper-plane"></span> Image</a>
+        <a href="#"><img src="./assets/img/Date.png" width="50px" height="50px"/> Date</a>
+      </li>
+      <li class="col-sm">
+        <a href="#"><img src="./assets/img/img.png" width="50px" height="50px"/>  Image</a>
       </li>
     </div>
       <!-- <button (click)=”addNewDiv()”>Add New Div</button> -->
     </ul>
   </nav>
-  <div id="content" class="p-4 p-md-5">
+  <div id="content" class="p-4 p-md-5" >
 
-                            <div class="box-container">
-                              <app-resizable-draggable [width]="200" [height]="150" [left]="0" [top]="0"></app-resizable-draggable>
+
+                            <div class="box-container" >
+
+
+                                <app-resizable-draggable [width]="200" [height]="150" [left]="100" [top]="100"></app-resizable-draggable>
+                                <ng-container #container1>  </ng-container>
                             </div>
                             <!-- <div class="example-boundary" >
                               <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>

@@ -1,5 +1,6 @@
 .resizable-draggable {
   outline: 2px dashed #000;
+  background: #fff;
 }
   span:first-of-type {
     position: absolute;

@@ -77,11 +77,12 @@
   .add_sidebar.active {
     min-width: 300px;
     max-width: 300px;
-    text-align: center; }
+    text-align: center;
+    padding: 20px;}
     .add_sidebar.active ul.components li {
       font-size: 14px; }
       .add_sidebar.active ul.components li a {
-        padding: 10px 0; }
+        padding:4px 0; }
         .add_sidebar.active ul.components li a span {
           margin-right: 0;
           display: block;
@@ -120,10 +121,14 @@
       .add_sidebar ul li > ul li {
         font-size: 14px; }
         .add_sidebar ul li a {
-      padding: 10px 30px;
-      display: block;
-      color: white;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+          display: block;
+          color: white;
+          font-size: 10px;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 500;
+      /* border-bottom: 1px solid rgba(255, 255, 255, 0.1);  */
+    }
       .add_sidebar ul li a span {
         margin-right: 15px; }
         @media (max-width: 991.98px) {
@@ -187,3 +192,27 @@
           border-width: 8px;
           border-color: transparent transparent transparent #000;
         }
+        .add_sidebar h1{
+          color: white;
+          text-transform: uppercase;
+        }
+
+        .cus_vituacal li.col-sm {
+          width: 75px;
+          height: 75px;
+          margin-right: 14px;
+          background: #6b6b6b00;
+          border: 1px solid #aba3a32e;
+          margin-top: 20px;
+      }
+      .cus_vituacal li.col-sm:hover{
+        border: 1px solid #fff;
+        transition: 1s;      }
+        .cus_vituacal li button {
+          background: transparent;
+          border: none;
+          color: #fff;
+          font-size: 10px;
+          text-transform: uppercase;
+          padding: 4px 0px;
+      }
