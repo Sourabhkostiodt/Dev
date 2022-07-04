@@ -9,7 +9,10 @@ import { AddBoardComponent } from './add-board/add-board.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AngularDraggableModule } from 'ngx-draggable-resize';
 import { SourceComponent } from './source/source.component';
- import { ResizableDraggableComponent } from './resizable-draggable/resizable-draggable.component';
+import { ResizableDraggableComponent } from './resizable-draggable/resizable-draggable.component';
+import { MatricsComponent } from './matrics/matrics.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -19,13 +22,17 @@ import { SourceComponent } from './source/source.component';
     DashboardComponent,
     AddBoardComponent,
     SourceComponent,
-    ResizableDraggableComponent
+    ResizableDraggableComponent,
+    MatricsComponent
+
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     DragDropModule,
-    AngularDraggableModule
+    AngularDraggableModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class AuthModule { }

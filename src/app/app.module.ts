@@ -3,26 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AuthModule } from './auth/auth.module';
-import { AboutComponent } from './pages/about/about.component';
-import { PricesComponent } from './pages/prices/prices.component';
-import { ContactComponent } from './pages/contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CapitaltextPipe } from './pipes/capitaltext.pipe';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     HeaderComponent,
     FooterComponent,
-    AboutComponent,
-    PricesComponent,
-    ContactComponent,
+    CapitaltextPipe,
+
 
 
   ],
@@ -32,6 +29,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AuthModule,
     BrowserAnimationsModule,
     DragDropModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+
 
 
   ],

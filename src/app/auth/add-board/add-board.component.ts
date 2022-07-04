@@ -21,6 +21,7 @@ export class AddBoardComponent implements OnInit {
     const componentRef = this.container.createComponent(componentFactory);
     componentRef.instance.index = this._counter++;
   }
+
   pie(){
     alert('pie')
 

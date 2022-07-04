@@ -3,30 +3,29 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddBoardComponent } from './auth/add-board/add-board.component';
 import { DashboardComponent } from './auth/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
+//import { MatricsComponent } from './auth/matrics/matrics.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { SourceComponent } from './auth/source/source.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { HomeComponent } from './pages/home/home.component';
-import { PricesComponent } from './pages/prices/prices.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'',
+    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component:RegisterComponent },
+  { path: 'register', component:RegisterComponent },
+  { path: 'dashboard', component:DashboardComponent },
+  { path: 'add-board', component:AddBoardComponent },
+  { path: 'source', component:SourceComponent },
+  //{ path: 'matrics', component:MatricsComponent },
+  { path: '**', redirectTo: '/home' }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot([
-    { path: 'home', component: HomeComponent },
-    { path: 'contact', component: ContactComponent },
-    { path: 'prices', component: PricesComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component:RegisterComponent },
-    { path: 'register', component:RegisterComponent },
-    { path: 'dashboard', component:DashboardComponent },
-    { path: 'add-board', component:AddBoardComponent },
-    { path: 'source', component:SourceComponent },
-    { path: '**', redirectTo: '/home' }
-
-  ])],
+  imports: [RouterModule.forRoot(routes, {
+    useHash:false
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
