@@ -51,7 +51,7 @@
           [ngClass]="status ? 'success_btncliekedones' : 'danger'" >
                 <span #dragHandleRB [cdkDragLockAxis]="lockAxis" class="dragHandle rb" cdkDrag (cdkDragMoved)="dragMove(dragHandleRB, $event, control)"></span>
                 {{control.index}}
-                {{control.width}}
+
 
 
                 <span #dragHandleBottom cdkDragLockAxis="y" class="dragHandle bottom" cdkDrag (cdkDragMoved)="dragMove(dragHandleBottom, $event, control)"></span>
