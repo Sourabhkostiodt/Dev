@@ -25,27 +25,26 @@
       <!-- <button (click)=”addNewDiv()”>Add New Div</button> -->
     </ul>
     <h1>Metrics</h1>
-    <app-matrics></app-matrics>
+
   </nav>
   <div id="content" class="p-4 p-md-5" >
 
 
-                            <div class="box-container" >
+              <div class="box-container" >
 
+                              <ng-container ng-reflect-width="appHighlight" #container>
+                                 <app-resizable-draggable [width]="heading" [height]="test" [left]="100" [top]="100">
+                                 </app-resizable-draggable>
+                                 <app-resizable-draggable [width]="heading" [height]="test" [left]="100" [top]="100">
+                                </app-resizable-draggable>
+                            </ng-container>
+              </div>
 
-                                <app-resizable-draggable [width]="200" [height]="150" [left]="100" [top]="100"></app-resizable-draggable>
-                                <ng-container #container1>  </ng-container>
-                            </div>
-                            <!-- <div class="example-boundary" >
-                              <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-                                I can only be dragged within the dotted container
-                              </div>
-                            </div> -->
 
   </div>
 
 
-  <app-matrics></app-matrics>
+
 
 </div>
 

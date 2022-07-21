@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient,HttpParams } from "@angular/common/http";
+import { map, Observable } from 'rxjs';
+import { baseUrl } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,20 +11,11 @@ export class AuthenticationService {
   constructor(private http:HttpClient) { }
 
 
-  // login(username: string, password: string) {
-  //   // post to fake back end, this url will be handled there...
+login(data: any):Observable<any> {
+  console.log('this is from server');
+  console.log(data);
+  return this.http.post('http://localhost:4001/login',data);
+  console.log('login sussesfully');
 
-  //   return this.http
-  //     .post<any>(`/users/authenticate`, { username, password })
-  //     .pipe(
-  //       map(user => {
-  //         // store user details and basic auth credentials in local storage to keep user logged in between page refreshes
-  //         user.authdata = window.btoa(username + ":" + password);
-  //         localStorage.setItem("currentUser", JSON.stringify(user));
-  //         this.currentUserSubject.next(user);
-  //         return user;
-  //       })
-  //     );
-  // }
-
+}
 }

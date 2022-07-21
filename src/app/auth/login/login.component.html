@@ -1,23 +1,23 @@
 
 
 
-<form>
+<form [formGroup]="loginFormValue" (ngSubmit)="Onsubmit()">
   <div class="main_form">
     <h2>  Login Your Account </h2>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
     <small id="emailHelp" class="form-text text-muted">Use Special Symbol and make it stronger.</small>
   </div>
 
   <div class="btn_cls">
 
-  <a  class="btn btn-primary" routerLink="/login"> Login </a>
+    <input type="submit"  class="btn btn-primary" >
   <div class="register_link"><small id="emailHelp" class="form-text text-muted">Don't have a account please<a  class="" routerLink="/register"> Register</a></small></div>
 </div>
 </div>

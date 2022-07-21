@@ -18,7 +18,7 @@ export class MatricsComponent {
               let row = csvToRowArray[index].split(",");
               this.userArray.push(new User( parseInt( row[0], 10), row[1], row[2], row[3].trim()));
             }
-            console.log(this.userArray);
+            // console.log(this.userArray);
 
         },
         error => {

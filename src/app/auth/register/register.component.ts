@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray,FormControl,FormGroup,Form, FormBuilder } from '@angular/forms';
+import { ServicesService } from '../services/services.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -7,16 +8,12 @@ import { FormArray,FormControl,FormGroup,Form, FormBuilder } from '@angular/form
 })
 export class RegisterComponent implements OnInit {
 
-
-  // registerformValue = new FormGroup;
   alert:boolean = false
-//  public register = new FormGroup({
-//     name: new FormGroup([]),
-//     email: new FormGroup([]),
-//     password: new FormGroup([])
-//   })
+  loading = false;
+  submitted = false;
 
-  constructor(public fb : FormBuilder) { }
+  constructor(public fb : FormBuilder,
+    public Services :ServicesService ) { }
 
   ngOnInit(): void {
     this.registerformValue;
@@ -28,9 +25,28 @@ export class RegisterComponent implements OnInit {
     password:''
 
   })
-
+  get f() { return this.registerformValue.controls; }
   register( ){
-     // console.log(this.registerformValue.value)
+      console.log(this.registerformValue.value)
+
+       this.submitted = true;
+
+        // stop here if form is invalid
+        if (this.registerformValue.invalid) {
+            return;
+        }
+
+         this.loading = true;
+        this.Services.register(this.registerformValue.value)
+            .pipe()
+            .subscribe(
+                data => {
+                    this.Services.register('Registration successful');
+                    // this.router.navigate(['/login']);
+                },
+                error => {
+                    console.log(error);
+                });
   }
 
 }

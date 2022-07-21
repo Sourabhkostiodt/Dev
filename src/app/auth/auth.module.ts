@@ -12,6 +12,7 @@ import { SourceComponent } from './source/source.component';
 import { ResizableDraggableComponent } from './resizable-draggable/resizable-draggable.component';
 import { MatricsComponent } from './matrics/matrics.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Add1BoardComponent } from './add1-board/add1-board.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddBoardComponent,
     SourceComponent,
     ResizableDraggableComponent,
-    MatricsComponent
+    MatricsComponent,
+    Add1BoardComponent
 
   ],
   imports: [
@@ -33,6 +35,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularDraggableModule,
     FormsModule,
     ReactiveFormsModule,
+
+
+
   ]
 })
 export class AuthModule { }

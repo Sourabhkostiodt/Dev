@@ -7,7 +7,8 @@ import { Injectable } from '@angular/core';
 export class ServicesService {
 rootUrl = "http://localhost:4001/";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,
+    ) { }
 
   register(data: any){
 

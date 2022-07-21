@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddBoardComponent } from './add-board/add-board.component';
+import { Add1BoardComponent } from './add1-board/add1-board.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 //import { MatricsComponent } from './matrics/matrics.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'reset-password', component:ResetPasswordComponent },
   { path: 'dashboard', component:DashboardComponent },
   { path: 'add-board', component:AddBoardComponent },
+  { path: 'add-board1', component:Add1BoardComponent },
   { path: 'source', component:SourceComponent },
   //{ path: 'matrics', component:MatricsComponent },
 
