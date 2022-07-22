@@ -1,4 +1,4 @@
-<div>
+
   <div class="wrapper d-flex align-items-stretch custom_top">
   <nav id="sidebar " class="active add_sidebar">
     <h1>Visulization</h1>
@@ -28,39 +28,55 @@
     </ul>
 
 
-        <div *ngFor="let control of controls;">
+
           <h1>Megerment</h1>
+
           <div class="width_cus">
             <label>Width</label>
-          <input type="text"  class="cus_width{{control.index}}" value="{{control.width}}" max="400"/></div>
+          <input type="text"  class="cus_width" value="{{width}}" placeholder="0" /></div>
           <div class="height_cus">
             <label>height</label>
-          <input type="text"  class="cus_height{{control.index}}" value="{{control.height}}"/></div>
-        </div>
+          <input type="text"  class="cus_height" value="{{height}}" placeholder="0"/></div>
+          <div class="height_cus">
+            <label>X axis </label>
+          <input type="text"  class="cus_height" value="{{transletAxisX}}" placeholder="0"/></div>
+          <div class="height_cus">
+            <label>Y axis </label>
+          <input type="text"  class="cus_height" value="{{transletAxisY}}" placeholder="0"/></div>
+
+
+          <button>Save</button>
+          <button>Preview</button>
 
 </nav>
-</div>
-<div>
-  <div id="content" class="p-4 p-md-5" >
-    <div class="box-container" >
-  <div *ngFor="let control of controls;"
-          #resizeBox class="control-image" [id]="control.index" [ngClass]="'cus_control'"  style="position: relative;" cdkDrag cdkDragBoundary=".header-image"
+
+
+    <div id="content"  class="p-4 p-md-5 example-boundary" >
+      <div class="example-boundary">
+    <div  cdkDragBoundary=".example-boundary" *ngFor="let control of controls;"
+          #resizeBox class="control-image" [id]="(control.index)" [ngClass]="'cus_control'"  style="position: relative;" cdkDrag cdkDragBoundary=".header-image"
           [style.width.px]="control.width"
           [style.height.px]="control.height"
           (click)="clickControl(control,status)"
           [ngClass]="status ? 'success_btncliekedones' : 'danger'" >
+
+          <span class="element_menu_removel">
+          <span class="open-button" (click)="clickOutside()"><i class="bi bi-three-dots-vertical"></i></span>
+          <span><i class="bi bi-trash-fill"></i></span>
+        </span>
+
                 <span #dragHandleRB [cdkDragLockAxis]="lockAxis" class="dragHandle rb" cdkDrag (cdkDragMoved)="dragMove(dragHandleRB, $event, control)"></span>
-                {{control.index}}
-
-
-
+                <div class="text_cls">{{control.index}}</div>
                 <span #dragHandleBottom cdkDragLockAxis="y" class="dragHandle bottom" cdkDrag (cdkDragMoved)="dragMove(dragHandleBottom, $event, control)"></span>
                 <span #dragHandleRight cdkDragLockAxis="x" class="dragHandle right" cdkDrag (cdkDragMoved)="dragMove(dragHandleRight, $event, control)"></span>
-            </div>
+                <div *ngIf="opened" class="menu" (clickOutside)="clickOutside()"><li>menu 1</li><li>menu 2</li></div></div>
+
+          </div>
+
 </div>
+
 </div>
-</div>
-</div>
+
 <!-- <button class="vis_cus_btn" (click)="addControl()">add</button>
 <div *ngFor="let control of controls;">
   <div class="width_cus">

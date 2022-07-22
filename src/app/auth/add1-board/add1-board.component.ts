@@ -1,7 +1,7 @@
 import {  OnInit } from '@angular/core';
 import { Component, VERSION, ViewChildren, ElementRef, QueryList, NgZone } from '@angular/core';
 import { Control, IControl } from './control.model';
-import { CdkDragMove } from '@angular/cdk/drag-drop';
+import { CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';
 import { ConstantPool } from '@angular/compiler';
 
 @Component({
@@ -13,6 +13,7 @@ export class Add1BoardComponent  {
   selectedControl?: Control;
   controls: Control[];
   status: any;
+  // newt:any;
   lockAxis?: any = 'x|y'
   @ViewChildren('resizeBox') resizeBox?: QueryList<ElementRef>;
   @ViewChildren('dragHandleRB') dragHandleRB?: QueryList<ElementRef>;
@@ -20,13 +21,25 @@ export class Add1BoardComponent  {
   @ViewChildren('dragHandleBottom') dragHandleBottom?:  QueryList<ElementRef>;
   clickCount: number = 0;
   ncount:number = Math.random() * 1;
+  transletAxisX: any;
+  transletAxisY: any;
+  width: any;
+  height: any;
+  x:any;
+  y:any;
+  opened: boolean | any;
 
   constructor(
     private ngZone: NgZone
   ){
     this.controls = [] ;
   }
+  clickOutside() {
 
+    this.opened = !this.opened;
+    console.log("clicked outside");
+
+  }
 
   addControl() : void {
      ++this.clickCount;
@@ -74,28 +87,30 @@ export class Add1BoardComponent  {
 
   setHandleTransform(dragHandle: HTMLElement, targetRect: ClientRect | DOMRect, position: 'x' | 'y' | 'both'): void {
     const dragRect = dragHandle.getBoundingClientRect();
-    let c = dragRect.width
-    let translateX = targetRect.width - dragRect.width;
-    let translateY = targetRect.height - dragRect.height;
+    // let c = dragRect.width
+    this.transletAxisX = targetRect.width - dragRect.width;
+    // console.log(this.transletAxisX = targetRect.width - dragRect.width);
+    this.transletAxisY = targetRect.height - dragRect.height;
+    // console.log(this.transletAxisY, 'dfdf')
     // eslint-disable-next-line no-console
-    // console.log(translateX + ':' + translateY);
+    // console.log(this.transletAxisX + ':' + this.transletAxisY);
     if (position === 'x') {
-      dragHandle.style.transform = `translate3d(${translateX}px, 0, 0)`;
+      dragHandle.style.transform = `translate3d(${this.transletAxisX}px, 0, 0)`;
       // localStorage.setItem('X dis', dragHandle.style.transform);
-       console.log(translateX);
+      // console.log(this.transletAxisX);
     }
 
     if (position === 'y') {
-      dragHandle.style.transform = `translate3d(0, ${translateY}px, 0)`;
+      dragHandle.style.transform = `translate3d(0, ${this.transletAxisY}px, 0)`;
       // localStorage.setItem('Y dis', dragHandle.style.transform);
-      console.log(translateY);
+      // console.log(this.transletAxisY);
 
     }
 
     if (position === 'both') {
-      dragHandle.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
+      dragHandle.style.transform = `translate3d(${this.transletAxisX}px, ${this.transletAxisY}px, 0)`;
       // localStorage.setItem('Both Dis', dragHandle.style.transform);
-      // console.log(dragHandle.style.transform);
+       console.log(dragHandle.style.transform);
     }
   }
 
@@ -110,46 +125,34 @@ export class Add1BoardComponent  {
 
     // eslint-disable-next-line no-console
     // console.log(this.templateControls);
-
     const dragRect = dragHandle.getBoundingClientRect();
     const targetRect = target.getBoundingClientRect();
-
-    //this.selectedControl!.width = dragRect.left - targetRect.left + dragRect.width;
+    // this.selectedControl!.width = dragRect.left - targetRect.left + dragRect.width;
     //this.selectedControl!.height = dragRect.top - targetRect.top + dragRect.height;
-
-    const width = dragRect.left - targetRect.left + dragRect.width;
-    const height = dragRect.top - targetRect.top + dragRect.height;
-    // console.log(width);
+    this.width = dragRect.left - targetRect.left + dragRect.width;
+    this.height = dragRect.top - targetRect.top + dragRect.height;
+    //  console.log(this.height = dragRect.top - targetRect.top + dragRect.height);
     // console.log(height);
-
     const count =  ++this.clickCount;
 
     //this.selectedControl!.width = width;
     //this.selectedControl!.height = height;
-    target.style.width = width + 'px';
-    target.style.height = height + 'px';
+    target.style.width = this.width + 'px';
+    target.style.height = this.height + 'px';
     // target.clickCount = count;b
-    // console.log(count);
+      // console.log(this.width);
     this.setUpdateHandleTransform();
   }
 
 clickControl(control : Control,status:any) : void {
+
+
     this.selectedControl = control;
-    console.log(this.selectedControl)
-    // if(this.selectedControl.index){
-    // this.status = !this.status;
+    this.status = !this.status;
 
 
-    const all = document.querySelectorAll('.control_image');
 
-    //   if (control){
-    //     document.getElementById(control.index).onclick = (e) => this.openAlert(f);
-    //   }
-    // });
-    // }
-    // else{
-    //   alert('htis is check');
-    // }
+
 
 
   }
