@@ -51,18 +51,18 @@
 </nav>
 
 
-    <div id="content"  class="p-4 p-md-5 example-boundary" >
+    <div id="content"  class="p-4 p-md-5" >
       <div class="example-boundary">
-    <div  cdkDragBoundary=".example-boundary" *ngFor="let control of controls;"
-          #resizeBox class="control-image" [id]="(control.index)" [ngClass]="'cus_control'"  style="position: relative;" cdkDrag cdkDragBoundary=".header-image"
+      <div  cdkDragBoundary="example-boundary" *ngFor="let control of controls;"
+          #resizeBox class="control-image"  [id]="(control.index)" [ngClass]="'cus_control'"  style="position: relative;" cdkDrag cdkDragBoundary=".header-image"
           [style.width.px]="control.width"
           [style.height.px]="control.height"
           (click)="clickControl(control,status)"
-          [ngClass]="status ? 'success_btncliekedones' : 'danger'" >
+          [ngClass]="id ? 'active' : 'inactive'">
 
           <span class="element_menu_removel">
           <span class="open-button" (click)="clickOutside()"><i class="bi bi-three-dots-vertical"></i></span>
-          <span><i class="bi bi-trash-fill"></i></span>
+          <span (click)="close(control.index)"><i class="bi bi-trash-fill"></i></span>
         </span>
 
                 <span #dragHandleRB [cdkDragLockAxis]="lockAxis" class="dragHandle rb" cdkDrag (cdkDragMoved)="dragMove(dragHandleRB, $event, control)"></span>
@@ -72,6 +72,7 @@
                 <div *ngIf="opened" class="menu" (clickOutside)="clickOutside()"><li>menu 1</li><li>menu 2</li></div></div>
 
           </div>
+          <span class="currenttime">{{now}}</span>
 
 </div>
 

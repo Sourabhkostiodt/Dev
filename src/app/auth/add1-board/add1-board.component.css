@@ -10,6 +10,10 @@ p {
     box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 30%);
 
 }
+i.bi.bi-trash-fill {
+  z-index: 999999;
+  cursor: pointer;
+}
 
 .dragHandle {
   position: absolute;
@@ -28,10 +32,10 @@ p {
   height: 100%;
   cursor: ew-resize;
 }
-.success_btncliekedones {
-  border: 2px solid #ffffff;
-    box-shadow: 1px 1px 3px 1px rgb(255 0 0 / 38%);
-    background: #fff
+.success_btncliekedones{
+  border: 2px solid #ff1313 !important;
+  box-shadow: 1px 1px 3px 1px rgb(255 0 0 / 38%) !important;
+  background: #fff !important;
 }
 
 .dragHandle.bottom {
@@ -96,11 +100,14 @@ p {
               0 8px 10px 1px rgba(0, 0, 0, 0.14),
               0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
-
+span.currenttime {
+  color: #fff;
+  font-size: 10px;
+}
 .example-boundary {
   margin-top:0px;
   width: 100%;
-  height: 700px;
+  height: 600px;
   max-width: 100%;
   /* border: dotted #000 2px; */
 }
@@ -267,7 +274,7 @@ p {
           /* left: 50%; */
       }
         .p-md-5 {
-          padding: 2rem!important;
+          padding: 1rem!important;
       }
         #content {
           width: 100%;

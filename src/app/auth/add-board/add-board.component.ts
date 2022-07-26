@@ -47,6 +47,8 @@ export class AddBoardComponent implements OnInit {
     this.container.createComponent(componentRef);
     // console.log(newt);
     componentRef.instance.index = this._counter++;
+    componentRef.instance.height = "300";
+    componentRef.instance.width = "200";
   }
 
   pie(): void {

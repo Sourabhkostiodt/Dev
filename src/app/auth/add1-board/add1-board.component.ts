@@ -1,4 +1,4 @@
-import {  OnInit } from '@angular/core';
+import {  EventEmitter, OnInit, Output } from '@angular/core';
 import { Component, VERSION, ViewChildren, ElementRef, QueryList, NgZone } from '@angular/core';
 import { Control, IControl } from './control.model';
 import { CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';
@@ -10,6 +10,7 @@ import { ConstantPool } from '@angular/compiler';
   styleUrls: ['./add1-board.component.css']
 })
 export class Add1BoardComponent  {
+  @Output() cloased = new EventEmitter<any>();
   selectedControl?: Control;
   controls: Control[];
   status: any;
@@ -25,29 +26,44 @@ export class Add1BoardComponent  {
   transletAxisY: any;
   width: any;
   height: any;
+  index:any;
   x:any;
   y:any;
+  public now: Date = new Date();
   opened: boolean | any;
-
+  id:any;
   constructor(
     private ngZone: NgZone
+
+
   ){
     this.controls = [] ;
+  }
+  close(id:any){
+    // alert(id);
+    // id == this.index;
+    // alert(this.index);
+    // alert(id);
+    this.cloased.emit({
+      id:id,
+    })
   }
   clickOutside() {
 
     this.opened = !this.opened;
     console.log("clicked outside");
+    console.log(this.now);
 
   }
+
 
   addControl() : void {
      ++this.clickCount;
 
     localStorage.setItem('clickCount', JSON.stringify(this.clickCount));
     const templateControl = new Control();
-     templateControl.width = 150;
-     templateControl.height = 150;
+     templateControl.width = 200;
+     templateControl.height = 200;
      templateControl.index = this.controls === undefined ? 0 : this.controls.length;
 
     this.controls.push(templateControl);
@@ -148,6 +164,9 @@ clickControl(control : Control,status:any) : void {
 
 
     this.selectedControl = control;
+    var id =  this.selectedControl.index;
+    alert(id);
+    this.id = !this.id;
     this.status = !this.status;
 
 
