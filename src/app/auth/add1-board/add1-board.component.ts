@@ -70,6 +70,7 @@ export class Add1BoardComponent  {
     this.selectedControl = templateControl;
 
     this.setCreateHandleTransform();
+
   }
 
   setCreateHandleTransform(): void {
