@@ -39,15 +39,15 @@ export class Add1BoardComponent  {
   ){
     this.controls = [] ;
   }
-  close(id:any){
-    // alert(id);
-    // id == this.index;
-    // alert(this.index);
-    // alert(id);
-    this.cloased.emit({
-      id:id,
-    })
-  }
+  // close(id:any){
+  //   // alert(id);
+  //   // id == this.index;
+  //   // alert(this.index);
+  //   // alert(id);
+  //   this.cloased.emit({
+  //     id:id,
+  //   })
+  // }
   clickOutside() {
 
     this.opened = !this.opened;
@@ -72,6 +72,21 @@ export class Add1BoardComponent  {
     this.setCreateHandleTransform();
 
   }
+
+  removeControl() : void {
+   const templateControl = new Control();
+    templateControl.width = 200;
+    templateControl.height = 200;
+    templateControl.index = this.controls === undefined ? 0 : this.controls.length;
+  //  let index = templateControl.index;
+  this.controls.pop();
+  // console.log(templateControl.index);
+
+
+
+ }
+
+
 
   setCreateHandleTransform(): void {
     let rect: any = null;
@@ -166,9 +181,9 @@ clickControl(control : Control,status:any) : void {
 
     this.selectedControl = control;
     var id =  this.selectedControl.index;
-    alert(id);
-    this.id = !this.id;
-    this.status = !this.status;
+    // alert(id);
+    // this.id = !this.id;
+    // this.status = !this.status;
 
 
 

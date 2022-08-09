@@ -13,6 +13,8 @@ import { ResizableDraggableComponent } from './resizable-draggable/resizable-dra
 import { MatricsComponent } from './matrics/matrics.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Add1BoardComponent } from './add1-board/add1-board.component';
+import { Add2BoardComponent } from './add2-board/add2-board.component';
+import { SharedMaterialModule } from './add2-board/shared.module';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { Add1BoardComponent } from './add1-board/add1-board.component';
     SourceComponent,
     ResizableDraggableComponent,
     MatricsComponent,
-    Add1BoardComponent
+    Add1BoardComponent,
+    Add2BoardComponent
 
   ],
   imports: [
@@ -35,6 +38,7 @@ import { Add1BoardComponent } from './add1-board/add1-board.component';
     AngularDraggableModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedMaterialModule,
 
 
 

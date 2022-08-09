@@ -37,7 +37,7 @@ export class AddBoardComponent implements OnInit {
   ngOnInit(): void {
     this.loadBox();
     this.loadContainer();
-   }
+  }
 
   number(): void {
     // this.container.clear();

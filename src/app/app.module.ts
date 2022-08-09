@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CapitaltextPipe } from './pipes/capitaltext.pipe';
+import { SharedMaterialModule } from './auth/add2-board/shared.module';
+
 
 
 
@@ -32,6 +34,9 @@ import { CapitaltextPipe } from './pipes/capitaltext.pipe';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedMaterialModule
+
+
 
 
 

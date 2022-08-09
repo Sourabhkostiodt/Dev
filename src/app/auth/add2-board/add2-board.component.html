@@ -1,0 +1,135 @@
+<div class="wrapper d-flex align-items-stretch custom_top">
+  <nav id="sidebar " class="active add_sidebar">
+    <h1>Visulization</h1>
+    <ul class="list-unstyled components mb-5">
+      <div class="row cus_vituacal">
+        <li class="active col-sm">
+<button  id=""  (click)="_btnAddArea()"><img src="./assets/img/numbers.png" width="50px" height="50px" />
+  Number
+</button></li>
+<li class="active col-sm">
+  <button><img src="./assets/img/pie.png" width="50px" height="50px" />
+    Pie
+  </button></li>
+  <li class="active col-sm">
+    <button><img src="./assets/img/bar.png" width="50px" height="50px" />
+      Bar
+    </button></li>
+
+    <li class="active col-sm">
+      <button (click)="_btnAddTextArea()">
+        Text
+      </button></li>
+
+      <div >
+
+      </div>
+<!-- <label>
+  remove extras <input type="checkbox" [(ngModel)]="showControl" />
+</label> -->
+<!-- {{ glovalll | json }} -->
+
+<div class="getValuehere">
+  <input type="text" value="{{ getupdateId }}"  [(ngModel)]="changeFormValue.getupdateId">
+  <br>
+  <input type="text" value="{{ getWidth }}" [(ngModel)]="changeFormValue.getWidth">
+  <br>
+   <input type="text" value="{{ getHeight }} "  [(ngModel)]="changeFormValue.getHeight">
+  <br>
+   <input type="text" value="{{ getXAxis }}"  [(ngModel)]="changeFormValue.getXAxis">
+   <br>
+   <input type="text" value="{{ getYAxis }}"  [(ngModel)]="changeFormValue.getYAxis">
+   <br>
+   <button (click)="getAxisValue()">save value</button>
+
+</div>
+<!-- <div class="getValuehere" *ngFor="let item of itemsg">
+ <input type="text" value="{{ item.width }}">
+ <br>
+  <input type="text" value="{{ item.height }}">
+ <br>
+  <input type="text" value="{{ item.x}}">
+  <input type="text" value="{{ item.y }}">
+  <br>
+  <button (click)="getAxisValue(item)">save value</button>
+</div> -->
+
+</div>
+</ul>
+  </nav>
+
+
+  <div
+  #boundary
+  class="boundary"
+  [ngStyle]="{
+    width: width + 'px',
+    height: height + 'px',
+    'background-image': 'url(' + imageUrl + ')'
+  }"
+>
+  <div
+    #resizeBox
+    *ngFor="let item of actions; let i = index"
+    class="container"
+    cdkDragBoundary=".boundary"
+    cdkDrag
+    id="area{{i}}"
+    [ngStyle]="{
+      width: item.width + 'px',
+      height: item.height + 'px',
+      transform:
+        'translate3d(' + (item.x - 2) + 'px, ' + (item.y - 2) + 'px, 0px)',
+      visibility: showControl ? '' : 'hidden',
+      'z-index': selectAreaIndex === i ? 9 : 1,
+      border: selectAreaIndex === i ? '1px solid gold' : '1px solid #808080a3'
+    }"
+    (cdkDragMoved)="handleMove(i, resizeBox)"
+    (click)="selectAreaIndex = i; openChangeDiv(item)"
+    >
+    <div class="handle" cdkDragHandle>
+      <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+        ></path>
+        <path d="M0 0h24v24H0z" fill="none"></path>
+      </svg>
+    </div>
+    <div [ngStyle]="{display: selectAreaIndex === i ? 'block' : 'none'}" class="_btnOption" (click)="_btnOption(i)" mat-button [matMenuTriggerFor]="menu" #trigger="matMenuTrigger"><i class="bi bi-three-dots-vertical"></i></div>
+    <mat-menu #menu="matMenu" class="menu-form-wrapper" [hasBackdrop]="false">
+      <div (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()">
+        <span>
+          <i class="bi bi-x" (click)="trigger.closeMenu()"></i>
+        </span>
+
+        <mat-list role="list">
+          <mat-list-item role="listitem">Item 1</mat-list-item>
+          <mat-list-item role="listitem">Item 2</mat-list-item>
+          <mat-list-item role="listitem">Item 3</mat-list-item>
+        </mat-list>
+      </div>
+    </mat-menu>
+
+    <div [ngStyle]="{display: selectAreaIndex === i ? 'block' : 'none'}" class="_btnDelete" (click)="_btnDelete(i)"><i class="bi bi-trash-fill"></i></div>
+
+    <span
+      #dragHandleCorner
+      class="dragHandle corner"
+      cdkDrag
+      (cdkDragMoved)="dragMove(i, dragHandleCorner, resizeBox, $event)"
+    >
+
+      <i class="bi bi-arrow-down-right-square"></i>
+
+    </span>
+
+    <div class="areaBtnBox" *ngFor="let control of actions let i = index">
+      <span>1</span>
+    </div>
+  </div>
+</div>
+
+<div></div>
+
+
+</div>

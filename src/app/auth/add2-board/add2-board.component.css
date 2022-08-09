@@ -1,3 +1,131 @@
+.container {
+  position: absolute;
+  background-color: #00000024;
+  border: dashed 1px #dedede;
+}
+
+.dragHandle {
+  position: absolute;
+  z-index: 1;
+}
+
+.dragHandle svg {
+  position: relative;
+  top: -10px;
+  right: 20px
+}
+
+svg {
+  color: black;
+}
+
+.dragHandle.corner {
+  width: 15px;
+  height: 15px;
+  cursor: nwse-resize;
+}
+
+.dragHandle.right {
+  width: 2px;
+  height: 100%;
+  cursor: ew-resize;
+}
+
+.dragHandle.bottom {
+  height: 2px;
+  width: 100%;
+  cursor: ns-resize;
+}
+
+.box {
+  width: 300px;
+  height: 100px;
+  border: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: move;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  border-radius: 4px;
+  margin-right: 25px;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 10px;
+  transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.box:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.boundary {
+  max-width: 100%;
+  border: dotted #ccc 2px;
+  background-size: contain;
+  background-position: 50% 50%;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.handle {
+  position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #a49592;
+    cursor: move;
+    width: 24px;
+    height: 24px;
+    z-index: 9;
+}
+.bi-arrow-down-right-square{
+position: relative;
+    top: -10px;
+    right: 20px;
+}
+i.bi.bi-x {
+  float: right;
+  z-index: 9;
+  position: relative;
+  cursor: pointer;
+  font-weight: 800;
+  color: #000;
+  font-size: 16px;
+}
+.mat-menu-content.ng-tns-c101-0 {
+  padding: 0px;
+}
+#button {
+  border: solid #471f1a;
+  margin: 15px;
+}
+
+._btnDelete {
+  position: absolute;
+    right: 25px;
+    top: 1px;
+    color: black;
+    cursor: pointer;
+  }
+._btnOption {
+  position: absolute;
+    right: 4px;
+    top: 2px;
+    color: black;
+    cursor: pointer;}
+
+.areaBtnBox {
+  text-align: center;
+  position: relative;
+  top: calc(50% - 28px);
+}
+
+
 p {
   font-family: Lato;
 }
